@@ -3,12 +3,9 @@ def carregar_dados(arquivo):
     try:
         with open(arquivo, 'r', encoding='utf-8') as f:
             linhas = f.readlines()
-            
-            # A primeira linha é o cabeçalho (colunas)
             colunas = linhas[0].strip().split(',')
             print(f"Colunas encontradas no arquivo: {colunas}")
             
-            # As demais linhas são os dados
             for linha in linhas[1:]:
                 valores = linha.strip().split(',')
                 dados.append({
