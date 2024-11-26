@@ -21,7 +21,6 @@ def carregar_dados(arquivo):
     
     return dados
 
-# (a)
 def buscar_cliente_por_nome(dados, parte_nome):
     clientes = set()
     for entrada in dados:
@@ -29,7 +28,6 @@ def buscar_cliente_por_nome(dados, parte_nome):
             clientes.add(entrada['nome'])
     return list(clientes)
 
-# (b)
 def buscar_casos_por_cliente(dados, nome_cliente):
     casos = []
     for entrada in dados:
@@ -37,7 +35,6 @@ def buscar_casos_por_cliente(dados, nome_cliente):
             casos.append(entrada['caso'])
     return casos
 
-# (c)
 def buscar_detalhes_caso(dados, numero_caso):
     for entrada in dados:
         if entrada['caso'] == numero_caso:
@@ -48,25 +45,20 @@ def buscar_detalhes_caso(dados, numero_caso):
             return nome_cliente, despesa, receita, diferenca
     return None
 
-# (d)
 def despesa_total(dados):
     return sum(entrada['despesa'] for entrada in dados)
 
-# (e)
 def receita_total(dados):
     return sum(entrada['receita'] for entrada in dados)
 
-# (f)
 def caso_maior_despesa(dados):
     maior_caso = max(dados, key=lambda x: x['despesa'])
     return maior_caso
 
-# (g)
 def caso_maior_receita(dados):
     maior_caso = max(dados, key=lambda x: x['receita'])
     return maior_caso
 
-# (h)
 def gerar_arquivo_cliente(dados, nome_cliente, arquivo_saida):
     casos_cliente = [entrada for entrada in dados if entrada['nome'].lower() == nome_cliente.lower()]
     
@@ -150,7 +142,7 @@ def main():
             print(mensagem)
         
         elif opcao == '0':
-            print("Saindo...")
+            print("Saiu do programa")
             break
         
         else:
